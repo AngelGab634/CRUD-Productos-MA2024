@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using PruebaEntityFrameworkCore.Services;
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -17,6 +19,7 @@
         -webkit-user-select: none;
         -moz-user-select: none;
         user-select: none;
+    using PruebaEntityFrameworkCore.Services;
       }
     @* 
         @media (min-width: 768px) {
@@ -104,8 +107,11 @@
                     <li><a class="nav-link px-2 link-dark" asp-controller="Supplier" asp-action="SupplierList">Proveedores</a></li></li>
                     <li><a class="nav-link px-2 link-dark" asp-controller="Category" asp-action="CategoryList">Categorias</a></li></li>
                     <li><a class="nav-link px-2 link-dark" asp-controller="Product" asp-action="ProductList">Productos</a></li></li>
-                    <li><a class="nav-link px-2 link-dark" asp-controller="User" asp-action="List">Usuarios</a></li>
                 </ul>
+                @if (User.IsInRole(MyConstants.Admin))
+                {
+                    <li><a class="nav-link px-2 link-dark" asp-controller="User" asp-action="List">Usuarios</a></li>
+                }
 
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
                     <input type="search" class="form-control" placeholder="Search..." aria-label="Search">

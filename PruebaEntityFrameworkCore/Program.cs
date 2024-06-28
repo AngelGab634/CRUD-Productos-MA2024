@@ -1,4 +1,4 @@
-using ManejoPresupuesto.Servicios;
+using PruebaEntityFrameworkCore.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -21,13 +21,12 @@ builder.Services.AddControllersWithViews(
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// builder.Services.AddDbContext<ApplicationDbContext>(opciones
-//  => opciones.UseSqlServer("name=MyConnectionTrust"));
+builder.Services.AddDbContext<ApplicationDbContext>(opc =>
+opc.UseSqlServer("name=SQLRep3par"));
+// builder.Services.AddDbContext<ApplicationDbContext>(opciones 
+// => opciones.UseNpgsql("name=PostgresConnection"));
 
- builder.Services.AddDbContext<ApplicationDbContext>(opciones 
- => opciones.UseNpgsql("name=PostgresConnection"));
-
- AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+ //AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
  builder.Services.AddAuthentication();
 

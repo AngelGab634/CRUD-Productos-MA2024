@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace ManejoPresupuesto.Servicios
+namespace PruebaEntityFrameworkCore.Services
 {
     public class MensajesDeErrorIdentity: IdentityErrorDescriber
     {

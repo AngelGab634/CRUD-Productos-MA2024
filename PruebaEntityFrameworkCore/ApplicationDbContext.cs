@@ -12,7 +12,6 @@ namespace PruebaEntityFrameworkCore
     {
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {
-            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
         }
 
         public DbSet<Producto> Productos { get; set; }
